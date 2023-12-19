@@ -65,7 +65,7 @@ class HassApiClient:
                 return False
             elif 'device_type' not in state['attributes']:
                 return False
-            elif not state['attributes']['device_type'].startswith('Abode Cam'):
+            elif not state['attributes']['device_type'].startswith('Abode Cam') or not state['attributes']['device_type'].startswith('IP Cam') :
                 return False
             return True
         states = self.get_states()
