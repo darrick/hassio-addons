@@ -1,4 +1,7 @@
 # Changelog
+## 1.3.0
+
+- Testing.
 
 ## 1.2.9
 
