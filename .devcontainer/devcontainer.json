@@ -3,7 +3,8 @@
     "image": "ghcr.io/home-assistant/devcontainer:addons",
     "appPort": [
         "8123:8123",
-        "4357:4357"
+        "4357:4357",
+        "5678:5678"
     ],
     "postStartCommand": "apt install -y python3-pip && bash devcontainer_bootstrap",
     "runArgs": [
@@ -15,6 +16,9 @@
     "containerEnv": {
         "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
     },
+    "mounts": [
+        "type=volume,target=/var/lib/docker"
+    ],
     "customizations": {
         "vscode": {
             "extensions": [
@@ -27,15 +31,12 @@
                 "zsh": {
                     "path": "/usr/bin/zsh"
                 }
-            }
-        },
-        "mounts": [
-            "type=volume,target=/var/lib/docker"
-        ],
-        "terminal.integrated.defaultProfile.linux": "zsh",
-        "editor.formatOnPaste": false,
-        "editor.formatOnSave": true,
-        "editor.formatOnType": true,
-        "files.trimTrailingWhitespace": true
+            },
+            "terminal.integrated.defaultProfile.linux": "zsh",
+            "editor.formatOnPaste": false,
+            "editor.formatOnSave": true,
+            "editor.formatOnType": true,
+            "files.trimTrailingWhitespace": true
+        }
     }
 }
